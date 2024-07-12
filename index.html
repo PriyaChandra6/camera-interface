@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camera Interface</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        #cameraControls {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        #switchCam, #takePhoto {
+            background-color: white;
+            border: none;
+            border-radius: 50%;
+            padding: 10px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        video {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            background-color: black;
+        }
+
+        canvas {
+            display: none;
+        }
+
+        img {
+            max-width: 100%;
+            margin-top: 20px;
+        }
+
+        #loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+            font-size: 18px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <video id="video" autoplay></video>
+    <div id="cameraControls">
+        <button id="switchCam">
+          <i class="fa-solid fa-camera-rotate"></i>
+        </button>
+        <button id="takePhoto">
+          <i class="fa-sharp fa-regular fa-circle-stop"></i>
+        </button>
+    </div>
+    <div id="loading">Loading...</div>
+    <canvas id="canvas"></canvas>
+    <img id="capturedImage" alt="Captured Image">
+
+    <script src="script.js"></script>
+</body>
+</html>
